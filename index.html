@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio — Front-end developer and automation builder</title>
+<meta name="description" content="Front-end builds in HTML, CSS and Bootstrap, and the n8n automation that runs behind them. Live projects, honest skill levels.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Front-end developer and automation builder">
+<meta property="og:description" content="Front-end builds in HTML, CSS and Bootstrap, and the n8n automation that runs behind them.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..700&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2317212C'/><rect x='7' y='14' width='18' height='4' fill='%23F2C230'/></svg>">
+</head>
+
+<body>
+
+<a class="skip-link" href="#work">Skip to the work</a>
+
+<!-- ============================================================
+     Site bar. Written as plain HTML on purpose, so the page is
+     still navigable if JavaScript fails.
+     ============================================================ -->
+<header class="bar">
+  <div class="bar__inner">
+    <a class="bar__mark" href="#top">
+      <span class="bar__tag" aria-hidden="true"></span>
+      <span data-fill="name">Portfolio</span>
+    </a>
+    <nav class="bar__nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#note">Notes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ==========================================================
+       Hero
+       ========================================================== -->
+  <section class="hero">
+    <div class="shell">
+      <p class="hero__role" data-fill="roleLine"></p>
+      <h1 class="hero__headline" id="headline"></h1>
+      <p class="hero__intro" data-fill="intro"></p>
+
+      <div class="tracks" id="tracks"></div>
+
+      <div class="hero__actions">
+        <a class="button button--solid" href="#work">See the work</a>
+        <a class="button" id="heroEmail" href="#contact">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Work
+       ========================================================== -->
+  <section class="section" id="work">
+    <div class="shell">
+      <div class="section__head">
+        <h2 class="section__title">Work</h2>
+        <p class="section__meta" id="workMeta"></p>
+      </div>
+
+      <!-- the one build to look at first -->
+      <div id="featured"></div>
+
+      <!-- everything else, as a log rather than a wall of cards -->
+      <div class="log" id="log"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Skills
+       ========================================================== -->
+  <section class="section section--tint" id="skills">
+    <div class="shell">
+      <div class="section__head">
+        <h2 class="section__title">Skills</h2>
+        <p class="section__meta">Each one names the build it shows up in. No bars, no percentages.</p>
+      </div>
+      <div id="skills-list"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Notes from one build
+       ========================================================== -->
+  <section class="section" id="note">
+    <div class="shell shell--narrow">
+      <div id="note-block"></div>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       What I'm working on now
+       ========================================================== -->
+  <section class="section section--tint" id="background">
+    <div class="shell">
+      <h2 class="section__title section__title--small">Right now</h2>
+      <p class="now-line" data-fill="now"></p>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       Contact
+       ========================================================== -->
+  <section class="section section--contact" id="contact">
+    <div class="shell shell--narrow">
+      <h2 class="section__title">Get in touch</h2>
+      <div id="contact-block"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="shell">
+    <p><span data-fill="name"></span> <span class="foot__dim" data-fill="location"></span></p>
+    <p class="foot__dim">Built by hand in HTML, CSS and JavaScript.</p>
+  </div>
+</footer>
+
+<noscript>
+  <div class="noscript">
+    This page fills its content in with JavaScript, which is switched off in your browser.
+    Email me instead and I will send the work through directly.
+  </div>
+</noscript>
+
+<!-- ============================================================
+     Chat assistant. The button only appears once you put your
+     n8n webhook URL into js/data.js.
+     ============================================================ -->
+<div id="chat-root"></div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>
